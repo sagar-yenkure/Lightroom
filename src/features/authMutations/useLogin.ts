@@ -4,15 +4,33 @@ import toast from "react-hot-toast";
 
 const useLogin = () => {
   const { mutate, isPending } = useMutation({
-    mutationFn: ({ email, password }: { email: string; password: string }) =>
-      signIn("credentials", {
-        email: email,
-        password: password,
+    mutationFn: async ({
+      email,
+      password,
+    }: {
+      email: string;
+      password: string;
+    }) => {
+      const result = await signIn("credentials", {
+        email,
+        password,
         redirect: false,
-      }),
-    onSuccess: () => toast.success("user login successful"),
-    onError: () => toast.error("there error while logging"),
+      });
+
+      if (result?.error) {
+        throw new Error(result.error);
+      }
+
+      return result;
+    },
+    onSuccess: (data) => {
+      toast.success("User login successful");
+    },
+    onError: (error) => {
+      toast.error(error.message || "There was an error while logging in");
+    },
   });
+
   return {
     login: mutate,
     loginPending: isPending,
