@@ -14,6 +14,11 @@ const ItemPreview = ({ variant, product }: { variant: any; product: any }) => {
   return (
     <>
       <div className=" bg-white p-4 ">
+        {/* Coupon Banner */}
+        <div className="bg-yellow-300 text-black font-semibold text-center py-2 my-3 rounded-md">
+          🎉 Use coupon <span className="text-red-600">DEVSAGAR</span> for ₹100
+          off! 🎉
+        </div>
         <div className="space-y-4 md:flex md:items-center md:gap-6 md:space-y-0">
           <div
             className="relative rounded-lg overflow-hidden bg-neutral-focus"

@@ -153,7 +153,7 @@ const CheckOut: React.FC<CheckOutProps> = ({ variant, product }) => {
           <input
             name="voucher"
             type="text"
-            className="w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-black placeholder-gray-400 focus:border-blue-400 focus:ring-blue-400"
+            className="w-full rounded-lg border border-gray-600  p-2.5 text-black placeholder-gray-400 focus:border-blue-400 focus:ring-blue-400"
             placeholder="Enter voucher code"
             required
           />
@@ -161,7 +161,7 @@ const CheckOut: React.FC<CheckOutProps> = ({ variant, product }) => {
           <button
             disabled={verifyVoucherPending}
             type="submit"
-            className="w-full flex justify-center rounded-lg bg-green-500 px-5 py-2.5 text-white font-semibold transition hover:bg-green-600 focus:ring-4 focus:ring-green-600"
+            className="w-full flex justify-center rounded-lg bg-green-500 px-5 py-2.5 text-black  font-bold transition hover:bg-green-600 focus:ring-4 focus:ring-green-600"
           >
             {verifyVoucherPending ? <Spinner /> : "Apply Code"}
           </button>
