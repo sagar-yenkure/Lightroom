@@ -176,7 +176,7 @@ export default function AdminProductForm() {
                     </Label>
                     <div className="relative">
                       <span className="absolute left-3 top-2 text-gray-700">
-                        $
+                        &#8377;
                       </span>
                       <Input
                         type="number"
