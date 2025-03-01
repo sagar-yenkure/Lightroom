@@ -80,8 +80,8 @@ export default function Home() {
       )}
 
       {/* 🛍️ Product List */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 py-4 w-full">
-        {productIsLoading
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 py-4 w-full">
+        {!productIsLoading
           ? Array(8)
               .fill(null)
               .map((_, idx) => <ProductCardSkeleton key={idx} />)
