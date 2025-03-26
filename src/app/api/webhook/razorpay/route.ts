@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
       .digest("hex");
     
     console.log("expected Signature -----",expectedSignature)
-    conosole.log("razorpay Signature -----", signature)
+    console.log("razorpay Signature -----", signature)
     
     if (expectedSignature !== signature)
       return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
